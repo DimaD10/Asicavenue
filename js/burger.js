@@ -6,7 +6,15 @@ document.addEventListener("click", (e) => {
     if (e.target.closest(".burger-btn").classList.contains("active")) {
       document.body.style.overflow = "hidden";
     } else {
-      document.body.style.overflow = "visible";
+      if (document.querySelector(".catalog-aside")) {
+        if (
+          !document.querySelector(".catalog-aside").classList.contains("active")
+        ) {
+          document.body.style.overflow = "visible";
+        }
+      } else {
+        document.body.style.overflow = "visible";
+      }
     }
   }
 });
