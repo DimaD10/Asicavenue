@@ -151,11 +151,13 @@ a,
   line-height: 200%;
   letter-spacing: -1.2px;
 
-  padding-bottom: 40px;
-  @media (max-width: 1200px) {
-    padding-bottom: calc(24px + (40 - 24) * ((100vw - 320px) / (1200 - 320)));
+  &:not(.static-paragraph_clean) {
+    padding-bottom: 40px;
+    @media (max-width: 1200px) {
+      padding-bottom: calc(24px + (40 - 24) * ((100vw - 320px) / (1200 - 320)));
+    }
+    border-bottom: 1px solid #2c3343;
   }
-  border-bottom: 1px solid #2c3343;
 
   a {
     color: #5c667b;
@@ -437,10 +439,6 @@ a,
   &__preview-slider {
     width: 76%;
     margin: 0 auto;
-
-    .swiper-wrapper {
-    }
-    //overflow: hidden;
   }
   &__button-prev {
     left: -10px !important;
